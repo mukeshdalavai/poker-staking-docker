@@ -2,16 +2,16 @@ version: '2.2'
 
 services:
 
-  # app-ui:
-  #   image: dmk0062/media-storage-ui:2.0
-  #   # build: ./ui
-  #   restart: always
-  #   ports:
-  #     - 80:80
+  app-ui:
+    image: dmk0062/poker-staking-ui:2.0
+    # build: ./ui
+    restart: always
+    ports:
+      - 80:80
 
   auth-service:
     image: dmk0062/auth-service:1.0
-    build: ./auth-service
+    # build: ./auth-service
     container_name: auth-service
     depends_on:
       - mongo
@@ -20,7 +20,7 @@ services:
 
   player-service:
     image: dmk0062/player-service:1.0
-    build: ./player-service
+    # build: ./player-service
     container_name: player-service
     depends_on:
       - mongo
